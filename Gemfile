@@ -12,7 +12,6 @@ end
 
 group :test do
   gem 'rake' # For Travis CI
-  gem 'rspec', '~> 3.7'
   gem 'simplecov', '~> 0.16', require: false
   gem 'webmock', '~> 3.4'
 end
