@@ -1,5 +1,5 @@
 require 'revolut/version'
-# require 'revolut/utils'
+require 'revolut/utils'
 require 'revolut/error'
 require 'revolut/client'
 

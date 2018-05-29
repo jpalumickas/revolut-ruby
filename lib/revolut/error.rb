@@ -38,13 +38,11 @@ module Revolut
     # @param response [Faraday::Env] HTTP response.
     #
     # @return [String] Revolut error message.
-    def self.error_message(_response)
-      nil
-      # return unless response.body.is_a?(Hash)
-      # return unless response.body['error']
-      #
-      # message = response.body['error']['message']
-      # Revolut::Utils.presence(message)
+    def self.error_message(response)
+      return unless response.body.is_a?(Hash)
+      message = response.body['message']
+      return unless message
+      Revolut::Utils.presence(message)
     end
   end
 
