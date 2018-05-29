@@ -15,7 +15,7 @@ gem 'revolut'
 ### Authentication
 
 When you sign up for an account, you can generate production or sandbox **API key** in settings page.
-You will need this API key to communicate with [Revolut][revollut] API.
+You will need this API key to communicate with [Revolut][revolut] API.
 When testing, you should use Sandbox environment.
 
 Before making any request, you should authenticate first. Use the response object to

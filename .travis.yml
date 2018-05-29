@@ -1,5 +1,4 @@
 sudo: false
-bundler_args: --without development
 
 cache:
   bundler: true
