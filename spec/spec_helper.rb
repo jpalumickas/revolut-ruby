@@ -1,9 +1,22 @@
-require "bundler/setup"
-require "revolut"
+require 'bundler/setup'
+require 'simplecov'
+
+SimpleCov.formatters = [
+  SimpleCov::Formatter::HTMLFormatter
+]
+
+SimpleCov.start
+require 'revolut'
+
+require 'webmock/rspec'
+
+WebMock.disable_net_connect!(allow: ['codeclimate.com'])
+
+Dir[File.expand_path('../spec/support/**/*.rb', __dir__)].each { |f| require f }
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
-  config.example_status_persistence_file_path = ".rspec_status"
+  config.example_status_persistence_file_path = '.rspec_status'
 
   # Disable RSpec exposing methods globally on `Module` and `main`
   config.disable_monkey_patching!

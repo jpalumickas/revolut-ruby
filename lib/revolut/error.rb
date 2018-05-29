@@ -26,7 +26,7 @@ module Revolut
       when 403 then Revolut::Forbidden
       when 404 then Revolut::NotFound
       when 405 then Revolut::MethodNotAllowed
-      when 405 then Revolut::NotAcceptable
+      when 406 then Revolut::NotAcceptable
       when 429 then Revolut::TooManyRequests
       when 500 then Revolut::InternalServerError
       when 503 then Revolut::ServiceUnavailable
