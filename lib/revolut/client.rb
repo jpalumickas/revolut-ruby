@@ -3,6 +3,7 @@ require 'revolut/configuration'
 
 require 'revolut/clients/accounts'
 require 'revolut/clients/counterparties'
+require 'revolut/clients/payments'
 require 'revolut/clients/webhooks'
 
 module Revolut
@@ -10,6 +11,7 @@ module Revolut
   class Client
     include Revolut::Clients::Accounts
     include Revolut::Clients::Counterparties
+    include Revolut::Clients::Payments
     include Revolut::Clients::Webhooks
 
     # Initialize client.

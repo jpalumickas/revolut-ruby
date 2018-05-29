@@ -4,7 +4,7 @@ module Revolut
     module Counterparties
       # List counterparties
       #
-      # @see https://revolutdev.github.io/business-api/?shell--sandbox#get-counterparties
+      # @see https://revolutdev.github.io/business-api/?shell--production#get-counterparties
       #
       # @return [Hash] Response from API.
       def counterparties
@@ -13,7 +13,9 @@ module Revolut
 
       # Get Counterparty
       #
-      # @see https://revolutdev.github.io/business-api/?shell--sandbox#get-counterparty
+      # @see https://revolutdev.github.io/business-api/?shell--production#get-counterparty
+      #
+      # @param id [UUID] Id of counterparty.
       #
       # @return [Hash] Response from API.
       def counterparty(id)
@@ -22,7 +24,7 @@ module Revolut
 
       # Add Revolut Counterparty
       #
-      # @see https://revolutdev.github.io/business-api/?shell--sandbox#add-revolut-counterparty
+      # @see https://revolutdev.github.io/business-api/?shell--production#add-revolut-counterparty
       #
       # @return [Hash] Response from API.
       def add_counterparty(params = {})
@@ -31,7 +33,9 @@ module Revolut
 
       # Delete Counterparty
       #
-      # @see https://revolutdev.github.io/business-api/?shell--sandbox#delete-counterparty
+      # @see https://revolutdev.github.io/business-api/?shell--production#delete-counterparty
+      #
+      # @param id [UUID] Id of counterparty.
       #
       # @return [Hash] Response from API.
       def delete_counterparty(id)

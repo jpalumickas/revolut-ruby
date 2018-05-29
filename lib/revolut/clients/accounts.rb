@@ -13,10 +13,9 @@ module Revolut
 
       # Get account information.
       #
-      # @see
-      # https://revolutdev.github.io/business-api/?shell--sandbox#get-account
+      # @see https://revolutdev.github.io/business-api/?shell--production#get-account
       #
-      # @param id [Integer] Id of group
+      # @param id [UUID] Id of account.
       #
       # @return [Hash] Response from API.
       def account(id)
