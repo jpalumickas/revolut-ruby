@@ -73,5 +73,31 @@ RSpec.describe Revolut::Error do
         "We're temporarily offline for maintenance. Please try again later."
       )
     end
+
+    context 'message from response' do
+      it 'has correct error message from response' do
+        response = double(
+          status: 500,
+          body: { 'message' => 'TEST' }
+        )
+        expect { raise Revolut::Error.from_response(response) }
+          .to raise_error(
+            Revolut::InternalServerError,
+            'TEST'
+          )
+      end
+
+      it 'has correct error message when response error is blank' do
+        response = double(
+          status: 500,
+          body: { 'message' => '' }
+        )
+        expect { raise Revolut::Error.from_response(response) }
+          .to raise_error(
+            Revolut::InternalServerError,
+            'We had a problem with our server. Try again later.'
+          )
+      end
+    end
   end
 end
