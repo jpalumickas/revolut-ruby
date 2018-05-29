@@ -27,7 +27,7 @@ before_script:
   - ./cc-test-reporter before-build
 
 script:
-  - bundle exec rspec
+  - rake spec
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
