@@ -35,10 +35,6 @@ def stub_post_command(action, fixture_name, options = {})
     .to_return(json_response(fixture_name))
 end
 
-# def stub_put_command(action, fixture, options = {})
-#   stub_request_command(:put, action, fixture, options)
-# end
-
 def stub_request_command(method, action, fixture_name, options = {})
   stub_request(method, "#{base_url}/#{action}")
     .with(query: options, headers: { 'Authorization' => 'Bearer test_key' })
