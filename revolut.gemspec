@@ -12,6 +12,11 @@ Gem::Specification.new do |spec|
   spec.description   = 'Ruby gem for Revolut API'
   spec.homepage      = 'https://github.com/jpalumickas/revolut-ruby'
   spec.license       = 'MIT'
+  spec.metadata = {
+    'bug_tracker_uri' => 'https://github.com/jpalumickas/revolut-ruby/issues',
+    'source_code_uri' => "https://github.com/jpalumickas/revolut-ruby/tree/v#{Revolut::VERSION}",
+    'changelog_uri'   => "https://github.com/jpalumickas/revolut-ruby/releases/tag/v#{Revolut::VERSION}"
+  }
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added
@@ -32,4 +37,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.16'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.7'
+  spec.add_development_dependency 'webmock', '~> 3.4'
 end

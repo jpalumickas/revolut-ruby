@@ -13,7 +13,6 @@ end
 group :test do
   gem 'rake' # For Travis CI
   gem 'simplecov', '~> 0.16', require: false
-  gem 'webmock', '~> 3.4'
 end
 
 # Specify your gem's dependencies in revolut.gemspec
