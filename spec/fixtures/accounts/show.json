@@ -1,0 +1,10 @@
+{
+  "id": "df8d6b20-0725-482e-a29e-fb09631480cf",
+  "name": "EUR expenses account",
+  "balance": 1234.00,
+  "currency": "EUR",
+  "state": "active",
+  "public": false,
+  "created_at": "2017-06-01T11:11:11.1Z",
+  "updated_at": "2017-06-01T11:11:11.1Z"
+}
