@@ -37,7 +37,7 @@ Or create file under `config/initializers/revolut.rb`
 ```ruby
 Revolut.configure do |config|
   config.api_key = 'my-secret-api-key'
-  config.environment = :sandbox  # Or :production
+  config.environment = :sandbox  # :production
 end
 ```
 

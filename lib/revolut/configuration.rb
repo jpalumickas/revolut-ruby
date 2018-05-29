@@ -1,15 +1,14 @@
 module Revolut
   # A class responsible for all configurations.
   class Configuration
-    # Default API endpoint.
     PRODUCTION_API_ENDPOINT = 'https://b2b.revolut.com/api/1.0'.freeze
     SANDBOX_API_ENDPOINT = 'https://sandbox-b2b.revolut.com/api/1.0'.freeze
-
-    # Default User Agent header string.
+    AVAILABLE_ENVIRONMENTS = %i[production sandbox].freeze
+    DEFAULT_ENVIRONMENT = :production
     USER_AGENT = "Revolut Ruby v#{Revolut::VERSION}".freeze
 
     attr_accessor :api_key
-    attr_writer :url, :user_agent, :environment
+    attr_writer :url, :user_agent
 
     # Takes url provided from configuration or uses default one.
     #
@@ -31,8 +30,27 @@ module Revolut
       @user_agent || USER_AGENT
     end
 
+    # Takes environment from configuration or uses default one.
+    # It will be used to set url automatically.
+    #
+    # @return [Symbol] Environment which will be used to set url.
     def environment
-      @environment || :production
+      @environment || DEFAULT_ENVIRONMENT
+    end
+
+    # Sets environment which will be used for url.
+    #
+    # @return [Symbol] Environment which will be used to set url.
+    def environment=(environment)
+      return DEFAULT_ENVIRONMENT unless environment
+
+      env_sym = environment.is_a?(String) ? environment.to_sym : environment
+
+      unless AVAILABLE_ENVIRONMENTS.include?(env_sym)
+        raise Revolut::Error, 'Invalid environment provided.'
+      end
+
+      @environment = env_sym
     end
   end
 end

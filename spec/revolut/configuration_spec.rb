@@ -30,4 +30,34 @@ RSpec.describe Revolut::Configuration do
       expect(config.user_agent).to eq('My user agent')
     end
   end
+
+  describe '#environment' do
+    it 'has correct value' do
+      expect(config.environment).to eq(:production)
+    end
+
+    it 'has correct value when set to sandbox' do
+      config.environment = :sandbox
+      expect(config.environment).to eq(:sandbox)
+    end
+
+    it 'has correct value when set to sandbox with string' do
+      config.environment = 'sandbox'
+      expect(config.environment).to eq(:sandbox)
+    end
+
+    it 'raises an error when invalid environment provided' do
+      expect { config.environment = :invalid }.to raise_error(
+        Revolut::Error,
+        'Invalid environment provided.'
+      )
+    end
+
+    it 'raises an error when invalid value provided' do
+      expect { config.environment = 123 }.to raise_error(
+        Revolut::Error,
+        'Invalid environment provided.'
+      )
+    end
+  end
 end

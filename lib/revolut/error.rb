@@ -5,6 +5,11 @@ module Revolut
       @message = msg
     end
 
+    # Default error message.
+    def to_s
+      @message || super
+    end
+
     # Returns the appropriate Revolut::Error sublcass based on status and
     # response message.
     #
