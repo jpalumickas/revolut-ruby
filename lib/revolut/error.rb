@@ -24,6 +24,7 @@ module Revolut
       klass.new(message) if klass
     end
 
+    # rubocop:disable Metrics/CyclomaticComplexity, Metrics/MethodLength
     def self.error_class(status)
       case status
       when 400 then Revolut::BadRequest
@@ -37,6 +38,7 @@ module Revolut
       when 503 then Revolut::ServiceUnavailable
       end
     end
+    # rubocop:enable Metrics/CyclomaticComplexity, Metrics/MethodLength
 
     # Returns the appropriate Revolut error message based on response
     #
@@ -119,7 +121,8 @@ module Revolut
   class ServiceUnavailable < Error
     # Default error message.
     def to_s
-      @message || "We're temporarily offline for maintenance. Please try again later."
+      @message ||
+        "We're temporarily offline for maintenance. Please try again later."
     end
   end
 end

@@ -1,4 +1,5 @@
 module Revolut
+  # Custom utilities
   module Utils
     BLANK_RE = /\A[[:space:]]*\z/
 

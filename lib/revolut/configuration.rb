@@ -42,8 +42,6 @@ module Revolut
     #
     # @return [Symbol] Environment which will be used to set url.
     def environment=(environment)
-      return DEFAULT_ENVIRONMENT unless environment
-
       env_sym = environment.is_a?(String) ? environment.to_sym : environment
 
       unless AVAILABLE_ENVIRONMENTS.include?(env_sym)

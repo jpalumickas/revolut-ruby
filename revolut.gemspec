@@ -2,6 +2,8 @@ lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'revolut/version'
 
+github_repo_url = 'https://github.com/jpalumickas/revolut-ruby'
+
 Gem::Specification.new do |spec|
   spec.name          = 'revolut'
   spec.version       = Revolut::VERSION
@@ -13,9 +15,9 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/jpalumickas/revolut-ruby'
   spec.license       = 'MIT'
   spec.metadata = {
-    'bug_tracker_uri' => 'https://github.com/jpalumickas/revolut-ruby/issues',
-    'source_code_uri' => "https://github.com/jpalumickas/revolut-ruby/tree/v#{Revolut::VERSION}",
-    'changelog_uri'   => "https://github.com/jpalumickas/revolut-ruby/releases/tag/v#{Revolut::VERSION}"
+    'bug_tracker_uri' => "#{github_repo_url}/issues",
+    'source_code_uri' => "#{github_repo_url}/tree/v#{Revolut::VERSION}",
+    'changelog_uri'   => "#{github_repo_url}/releases/tag/v#{Revolut::VERSION}"
   }
 
   # Specify which files should be added to the gem when it is released.

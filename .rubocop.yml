@@ -1,8 +1,5 @@
 AllCops:
   TargetRubyVersion: 2.1
-  Include:
-    - '**/Rakefile'
-    - '**/Gemfile'
 
 Style/DoubleNegation:
   Exclude:
@@ -11,3 +8,4 @@ Style/DoubleNegation:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*_spec.rb'
+    - 'revolut.gemspec'
