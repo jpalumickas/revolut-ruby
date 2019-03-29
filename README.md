@@ -2,6 +2,9 @@
 
 A Ruby gem which helps to communicate with [Revolut Business][revolut] API.
 
+[![Gem Version](https://img.shields.io/gem/v/revolut.svg?style=flat-square)][rubygems]
+[![Build Status](https://img.shields.io/travis/jpalumickas/revolut-ruby.svg?style=flat-square)][travis]
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -79,6 +82,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 Everyone interacting in the Revolut project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/jpalumickas/revolut-ruby/blob/master/CODE_OF_CONDUCT.md).
 
+[rubygems]: https://rubygems.org/gems/revolut
 [travis]: https://travis-ci.org/jpalumickas/revolut-ruby
 
 [revolut]: https://www.revolut.com
