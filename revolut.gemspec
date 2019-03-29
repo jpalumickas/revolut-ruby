@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.metadata = {
     'bug_tracker_uri' => "#{github_repo_url}/issues",
     'source_code_uri' => "#{github_repo_url}/tree/v#{Revolut::VERSION}",
-    'changelog_uri'   => "#{github_repo_url}/releases/tag/v#{Revolut::VERSION}"
+    'changelog_uri' => "#{github_repo_url}/releases/tag/v#{Revolut::VERSION}"
   }
 
   # Specify which files should be added to the gem when it is released.

@@ -23,7 +23,7 @@ module Revolut
       message = error_message(response)
 
       klass = error_class(status)
-      klass.new(message) if klass
+      klass&.new(message)
     end
 
     # rubocop:disable Metrics/CyclomaticComplexity, Metrics/MethodLength
@@ -49,8 +49,10 @@ module Revolut
     # @return [String] Revolut error message.
     def self.error_message(response)
       return unless response.body.is_a?(Hash)
+
       message = response.body['message']
       return unless message
+
       Revolut::Utils.presence(message)
     end
   end
