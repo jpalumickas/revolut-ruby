@@ -1,6 +1,6 @@
 module Revolut
   module Clients
-    # Revolut Accounts
+    # Revolut Payments
     module Payments
       # Transfer payment
       #
