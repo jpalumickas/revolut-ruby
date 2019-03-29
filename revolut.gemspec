@@ -35,13 +35,13 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'faraday', '~> 0.10'
   spec.add_dependency 'faraday_middleware', '~> 0.10'
-  spec.add_dependency 'hashie', '~> 3.5.5'
+  spec.add_dependency 'hashie', '>= 3.5.5'
 
-  spec.add_development_dependency 'bundler', '~> 1.16'
-  spec.add_development_dependency 'pry', '~> 0.11'
-  spec.add_development_dependency 'rake', '~> 10.0'
-  spec.add_development_dependency 'rspec', '~> 3.7'
-  spec.add_development_dependency 'rubocop', '~> 0.56'
+  spec.add_development_dependency 'bundler', '~> 1.17'
+  spec.add_development_dependency 'pry', '~> 0.12'
+  spec.add_development_dependency 'rake', '~> 12.3'
+  spec.add_development_dependency 'rspec', '~> 3.8'
+  spec.add_development_dependency 'rubocop', '~> 0.66'
   spec.add_development_dependency 'simplecov', '~> 0.16'
-  spec.add_development_dependency 'webmock', '~> 3.4'
+  spec.add_development_dependency 'webmock', '~> 3.5'
 end
