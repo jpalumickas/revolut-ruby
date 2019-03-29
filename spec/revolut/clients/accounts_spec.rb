@@ -15,7 +15,7 @@ RSpec.describe Revolut::Clients::Accounts do
     end
   end
 
-  describe '#accounts' do
+  describe '#account' do
     before do
       stub_get_command(
         'accounts/df8d6b20-0725-482e-a29e-fb09631480cf',
@@ -27,6 +27,21 @@ RSpec.describe Revolut::Clients::Accounts do
 
     it 'has correct currency' do
       expect(response.currency).to eq('EUR')
+    end
+  end
+
+  describe '#account_details' do
+    before do
+      stub_get_command(
+        'accounts/df8d6b20-0725-482e-a29e-fb09631480cf/bank-details',
+        'accounts/details'
+      )
+    end
+
+    let(:response) { client.account_details('df8d6b20-0725-482e-a29e-fb09631480cf') }
+
+    it 'has correct account no' do
+      expect(response.first.account_no).to eq('74931241')
     end
   end
 end

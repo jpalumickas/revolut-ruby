@@ -1,0 +1,10 @@
+{
+  "payment_orders" : [
+    {
+      "id" : "d56dd396-523b-4613-8cc7-54974c17bcac",
+      "scheduled_for" : "2017-10-10",
+      "title" : "Title of payment",
+      "payments_count" : 3
+    }
+  ]
+}

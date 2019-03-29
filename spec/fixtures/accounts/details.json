@@ -1,0 +1,50 @@
+[
+    {
+        "account_no": "74931241",
+        "sort_code": "344950",
+        "beneficiary": "Good Co.",
+        "beneficiary_address": {
+            "street_line1": "Sesame Street",
+            "street_line2": "1 Canada Square",
+            "city": "London",
+            "country": "GB",
+            "postcode": "E14 5AB"
+        },
+        "bank_country": "GB",
+        "schemas": [
+            "chaps",
+            "bacs",
+            "faster_payments"
+        ],
+        "pooled": false,
+        "estimated_time": {
+            "unit": "hours",
+            "min": 2,
+            "max": 24
+        }
+    },
+    {
+        "iban": "GB73 BARC 2036 4759 2458 33",
+        "bic": "BARCGB22",
+        "beneficiary": "Revolut LTD",
+        "beneficiary_address": {
+            "street_line1": "Revolut LTD, Level39",
+            "street_line2": "1 Canada Square",
+            "city": "London",
+            "country": "GB",
+            "postcode": "E14 5AB"
+        },
+        "bank_country": "GB",
+        "pooled": true,
+        "unique_reference": "28960536",
+        "schemes": [
+            "sepa",
+            "swift"
+        ],
+        "estimated_time": {
+            "unit": "days",
+            "min": 1,
+            "max": 3
+        }
+    }
+]

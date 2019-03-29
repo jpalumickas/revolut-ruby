@@ -3,6 +3,7 @@ require 'revolut/configuration'
 
 require 'revolut/clients/accounts'
 require 'revolut/clients/counterparties'
+require 'revolut/clients/payment_drafts'
 require 'revolut/clients/payments'
 require 'revolut/clients/webhooks'
 
