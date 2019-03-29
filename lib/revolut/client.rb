@@ -11,6 +11,7 @@ module Revolut
   class Client
     include Revolut::Clients::Accounts
     include Revolut::Clients::Counterparties
+    include Revolut::Clients::PaymentDrafts
     include Revolut::Clients::Payments
     include Revolut::Clients::Webhooks
 
