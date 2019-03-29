@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module Revolut
   # Custom utilities
   module Utils
-    BLANK_RE = /\A[[:space:]]*\z/
+    BLANK_RE = /\A[[:space:]]*\z/.freeze
 
     class << self
       def blank?(obj)

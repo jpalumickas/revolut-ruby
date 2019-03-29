@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Revolut
   # Faraday response middleware
   module Middleware

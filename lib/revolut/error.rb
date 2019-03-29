@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Revolut
   # Base Revolut error.
   class Error < StandardError

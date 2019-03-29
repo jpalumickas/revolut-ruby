@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def fixtures_dir
   File.expand_path('../fixtures', __dir__)
 end

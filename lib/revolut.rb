@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'revolut/version'
 require 'revolut/utils'
 require 'revolut/error'

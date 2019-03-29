@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 module Revolut
   # A class responsible for all configurations.
   class Configuration
-    PRODUCTION_API_ENDPOINT = 'https://b2b.revolut.com/api/1.0'.freeze
-    SANDBOX_API_ENDPOINT = 'https://sandbox-b2b.revolut.com/api/1.0'.freeze
+    PRODUCTION_API_ENDPOINT = 'https://b2b.revolut.com/api/1.0'
+    SANDBOX_API_ENDPOINT = 'https://sandbox-b2b.revolut.com/api/1.0'
     AVAILABLE_ENVIRONMENTS = %i[production sandbox].freeze
     DEFAULT_ENVIRONMENT = :production
-    USER_AGENT = "Revolut Ruby v#{Revolut::VERSION}".freeze
+    USER_AGENT = "Revolut Ruby v#{Revolut::VERSION}"
 
     attr_accessor :api_key
     attr_writer :url, :user_agent

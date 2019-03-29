@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Revolut
   module Clients
     # Revolut Accounts
