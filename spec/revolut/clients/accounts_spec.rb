@@ -25,7 +25,9 @@ RSpec.describe Revolut::Clients::Accounts do
       )
     end
 
-    let(:response) { client.account('df8d6b20-0725-482e-a29e-fb09631480cf') }
+    let(:response) do
+      client.account('df8d6b20-0725-482e-a29e-fb09631480cf')
+    end
 
     it 'has correct currency' do
       expect(response.currency).to eq('EUR')
@@ -40,7 +42,9 @@ RSpec.describe Revolut::Clients::Accounts do
       )
     end
 
-    let(:response) { client.account_details('df8d6b20-0725-482e-a29e-fb09631480cf') }
+    let(:response) do
+      client.account_details('df8d6b20-0725-482e-a29e-fb09631480cf')
+    end
 
     it 'has correct account no' do
       expect(response.first.account_no).to eq('74931241')
