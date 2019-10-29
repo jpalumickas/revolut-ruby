@@ -3,7 +3,7 @@
 A Ruby gem which helps to communicate with [Revolut Business][revolut] API.
 
 [![Gem Version](https://img.shields.io/gem/v/revolut.svg?style=flat-square)][rubygems]
-[![Build Status](https://img.shields.io/travis/jpalumickas/revolut-ruby.svg?style=flat-square)][travis]
+[![Coverage Status](https://img.shields.io/codecov/c/github/jpalumickas/revolut-ruby?style=flat-square)][codecov]
 
 ## Installation
 
@@ -55,10 +55,9 @@ Revolut.accounts
 
 ## Supported Ruby Versions
 
-This library aims to support and is [tested against][travis] the following Ruby
+This library aims to support and is [tested against][github_actions] the following Ruby
 implementations:
 
-* Ruby 2.3.0
 * Ruby 2.4.0
 * Ruby 2.5.0
 * Ruby 2.6.0
@@ -82,6 +81,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 Everyone interacting in the Revolut project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/jpalumickas/revolut-ruby/blob/master/CODE_OF_CONDUCT.md).
 
 [rubygems]: https://rubygems.org/gems/revolut
-[travis]: https://travis-ci.org/jpalumickas/revolut-ruby
+[codecov]: https://codecov.io/gh/jpalumickas/revolut-ruby
+[github_actions]: https://github.com/jpalumickas/revolut-ruby/actions
 
 [revolut]: https://www.revolut.com
