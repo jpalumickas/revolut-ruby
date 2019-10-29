@@ -11,15 +11,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - name: Checkout
+      uses: actions/checkout@v1
     - name: Set up Ruby ${{ matrix.ruby }}
       uses: actions/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
-    - name: Build and test with Rake
+    - name: Test
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       run: |
         gem install bundler
-        bundle install --jobs 4 --retry 3 --without development
+        bundle install --jobs 4 --retry 3
         bundle exec rspec
