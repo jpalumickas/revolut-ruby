@@ -33,39 +33,42 @@ module Revolut
     def request(method, path, query_params = {}, body_params = {})
       response = connection.send(method) do |request|
         request.url(path, query_params)
-        request.headers['Content-Type'] = 'application/json'
+        add_request_headers!(request)
 
-        if client.config.api_key
-          request.headers['Authorization'] = "Bearer #{client.config.api_key}"
+        if Revolut::Utils.present?(body_params)
+          request.body = body_params.to_json
         end
-
-        request.body = body_params.to_json
       end
 
       response
     end
 
-    def connection
-      conn_opts = {
-        headers: { user_agent: client.config.user_agent },
-        url: client.config.url,
-        builder: middleware
-      }
+    def add_request_headers!(request)
+      request.headers['Content-Type'] = 'application/json'
+      request.headers['Accept'] = 'application/json'
 
-      Faraday.new(conn_opts)
+      return unless client.config.api_key
+
+      request.headers['Authorization'] = "Bearer #{client.config.api_key}"
     end
 
-    def middleware
-      @middleware ||= Faraday::RackBuilder.new do |builder|
+    def connection
+      Faraday.new(connection_options) do |builder|
         builder.request :json
 
-        builder.use FaradayMiddleware::FollowRedirects
-        builder.use FaradayMiddleware::Mashify, mash_class: Revolut::Mash
+        builder.response :mashify, mash_class: Revolut::Mash
         builder.use Revolut::Middleware::RaiseError
-        builder.use FaradayMiddleware::ParseJson
+        builder.response :json
 
         builder.adapter Faraday.default_adapter
       end
+    end
+
+    def connection_options
+      {
+        headers: { user_agent: client.config.user_agent },
+        url: client.config.url
+      }
     end
   end
 end
