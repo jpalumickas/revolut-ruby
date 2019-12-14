@@ -1,0 +1,16 @@
+{
+  "from": {
+    "amount":100,
+    "currency":"USD"
+  },
+  "to": {
+    "amount":78.9,
+    "currency":"EUR"
+  },
+  "rate":0.789,
+  "fee": {
+    "amount":0.85,
+    "currency":"EUR"
+  },
+  "rate_date":"2019-01-16T13:01:47.229Z"
+}
