@@ -61,6 +61,7 @@ implementations:
 * Ruby 2.4.0
 * Ruby 2.5.0
 * Ruby 2.6.0
+* Ruby 2.7.0
 
 ## Development
 
