@@ -4,6 +4,7 @@ module Revolut
   # Base Revolut error.
   class Error < StandardError
     def initialize(msg = nil)
+      super(msg)
       @message = msg
     end
 
