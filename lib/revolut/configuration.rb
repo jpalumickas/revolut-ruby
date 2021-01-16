@@ -18,9 +18,10 @@ module Revolut
     def url
       return @url if @url
 
-      if environment == :production
+      case environment
+      when :production
         PRODUCTION_API_ENDPOINT
-      elsif environment == :sandbox
+      when :sandbox
         SANDBOX_API_ENDPOINT
       end
     end
@@ -46,9 +47,7 @@ module Revolut
     def environment=(environment)
       env_sym = environment.is_a?(String) ? environment.to_sym : environment
 
-      unless AVAILABLE_ENVIRONMENTS.include?(env_sym)
-        raise Revolut::Error, 'Invalid environment provided.'
-      end
+      raise Revolut::Error, 'Invalid environment provided.' unless AVAILABLE_ENVIRONMENTS.include?(env_sym)
 
       @environment = env_sym
     end

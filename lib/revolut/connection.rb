@@ -31,16 +31,12 @@ module Revolut
     private
 
     def request(method, path, query_params = {}, body_params = {})
-      response = connection.send(method) do |request|
+      connection.send(method) do |request|
         request.url(path, query_params)
         add_request_headers!(request)
 
-        if Revolut::Utils.present?(body_params)
-          request.body = body_params.to_json
-        end
+        request.body = body_params.to_json if Revolut::Utils.present?(body_params)
       end
-
-      response
     end
 
     def add_request_headers!(request)

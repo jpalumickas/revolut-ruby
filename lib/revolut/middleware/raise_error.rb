@@ -6,8 +6,6 @@ module Revolut
     # This class raises an exception based HTTP status codes returned
     # by the API.
     class RaiseError < Faraday::Response::Middleware
-      private
-
       def on_complete(response)
         error = Revolut::Error.from_response(response)
         raise error if error

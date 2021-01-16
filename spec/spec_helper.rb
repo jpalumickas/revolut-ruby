@@ -20,7 +20,7 @@ require 'webmock/rspec'
 
 WebMock.disable_net_connect!(allow: ['codeclimate.com'])
 
-Dir[File.expand_path('../spec/support/**/*.rb', __dir__)].each { |f| require f }
+Dir[File.expand_path('../spec/support/**/*.rb', __dir__)].sort.each { |f| require f }
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
