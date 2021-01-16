@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
   test:
+    name: Test
     strategy:
       matrix:
         ruby: [2.5, 2.6, 2.7, '3.0']
